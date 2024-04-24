@@ -11,7 +11,8 @@ openai.api_key = api_key
 def chat_with_sui(prompt):
     res = openai.chat.completions.create(
         model="gpt-3.5-turbo",
-        messages=[{"role":"user","content":prompt}]
+        messages=[{"role":"user","content":prompt}],
+        stream=True
     )
     return res
 
