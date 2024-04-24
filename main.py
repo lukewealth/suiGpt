@@ -13,7 +13,7 @@ def chat_with_sui(prompt):
         model="gpt-3.5-turbo",
         messages=[{"role":"user","content":prompt}]
     )
-    return res.choices[0].message
+    return res
 
 
 if __name__ == "__main__":

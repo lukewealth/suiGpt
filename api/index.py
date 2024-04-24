@@ -6,13 +6,17 @@ app = Flask(__name__)
 
 @app.route('/',methods =["POST"])
 def home():
-    if request.is_json:
-        data = request.get_json()
-        message = data.get('message')
-        return f'{message}'
-    else:
-     return 'Invalid request format. Please send JSON data.'
-    # return 'Hello, World!'
+    def generator():
+        if request.is_json:
+            data = request.get_json()
+            message = data.get('message')
+            res = chat_with_sui(message)
+            for chunk in res:
+                if chunk.choices[0].delta.content is not None:
+                    yield(chunk.choices[0].delta.content)
+        else:
+            return 'Invalid request format. Please send JSON data.'
+    return  generator(), {"Content-Type":"text/plain"}
 
 @app.route('/about')
 def about():
