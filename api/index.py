@@ -4,7 +4,7 @@ from main import chat_with_sui
 
 app = Flask(__name__)
 
-@app.route('/',methods =["POST"])
+@app.route('/ans',methods =["POST"])
 def home():
     def generator():
         if request.is_json:
@@ -18,6 +18,6 @@ def home():
             return 'Invalid request format. Please send JSON data.'
     return  generator(), {"Content-Type":"text/plain"}
 
-@app.route('/about')
+@app.route('/')
 def about():
-    return 'About'
+    return 'hello world'
