@@ -45,4 +45,4 @@
     {"role": "assistant", "content": "You can use these structs to define the data structures and types you need for your Move smart contracts."},
     {"role": "user", "content": "Thank you for the explanation!"},
     {"role": "assistant", "content": "You're welcome! If you have any more questions or need further assistance, feel free to ask."}
-]}
+]   }
