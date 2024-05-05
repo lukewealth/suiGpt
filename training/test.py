@@ -1,0 +1,1 @@
+"You can print out a value in the sui move programming language by using the print method from the **debug**  module from in the standard move library. Here is an example \n ```move module example::print_function {\n // Dependencies \n  use std::debug \n\n  }"

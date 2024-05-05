@@ -9,6 +9,8 @@ flask = "*"
 beautifulsoup4 = "*"
 requests = "*"
 selenium = "*"
+numpy = "*"
+tiktoken = "*"
 
 [dev-packages]
 

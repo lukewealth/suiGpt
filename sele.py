@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 driver = webdriver.Chrome()  # Or specify the path to your WebDriver executable
 
 # Navigate to the webpage
-driver.get("https://github.com/Ovodo/pool/blob/main/jackpot.move")
+driver.get("https://github.com/Ovodo/pool/blob/main/sources/liquidity_pool.move")
 
 try:
     # Wait for the dynamic content to load (if necessary)
@@ -18,11 +18,11 @@ try:
     dynamic_content_element = driver.find_element(By.ID, "read-only-cursor-text-area")
 
     # Extract the text content
-    text_content = dynamic_content_element.text.split("#[test_only]")[0]
+    text_content = dynamic_content_element.text.split("// Tests - ")[0]
     
 
     # Serialize the text content into a dictionary
-    content_dict = {"messages":[{"role":"assistant","content": text_content}]}
+    content_dict = {"messages":[{"role": "system", "content": "SuiAI is a chat agent that’s proficient in the Move smart contract language"}, {"role": "user", "content": "Create a smart contract module for a DEX (Decentralized exchange) on the Sui blockchain."},{"role":"assistant","content": text_content}]}
 
     # Convert the dictionary to a JSON string with pretty formatting
     # json_string = json.dumps(content_dict, indent=4)
