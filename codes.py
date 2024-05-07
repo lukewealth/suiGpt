@@ -10,7 +10,7 @@ username = os.environ.get('USER')
 
 
 # url = "https://api.github.com/repos/overmind-xyz/jpeg-jackpot-clmdpmkw20000jt083z0y186x/blob/main/sources/nft_lottery.move"
-url = "https://move-book.com/move-basics/generics.html"
+url = "https://move-book.com/appendix/acknowledgements.html"
 page = requests.get(url)
 
 
@@ -113,7 +113,7 @@ article_html = """
 
 formatted_article = format_article(page.text)
 # Convert the dictionary to a JSON string with pretty formatting
-content_dict = {"messages":[{"role": "system", "content": "SuiAI is a chat agent that’s proficient in the Move smart contract language"}, {"role": "user", "content": "What are `Generics` in the sui move language?"},{"role":"assistant","content": formatted_article}]}
+content_dict = {"messages":[{"role": "system", "content": "SuiAI is a chat agent that’s proficient in the Move smart contract language"}, {"role": "user", "content": "What are `acknowledgements` in the sui move language?"},{"role":"assistant","content": formatted_article}]}
 json_string = json.dumps(content_dict,ensure_ascii=False)
 
 # Create or open the .jsonl file
